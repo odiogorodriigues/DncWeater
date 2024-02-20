@@ -1,0 +1,15 @@
+.Footer {
+    margin-top: 150px;
+}
+
+p{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 60px;
+    font-weight: 600;
+    size: 25px;
+    align-items: center;
+    color: white !important;
+    background-color: #0C70F2;
+    cursor: pointer;
+}

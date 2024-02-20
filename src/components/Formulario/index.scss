@@ -1,0 +1,37 @@
+.formulario {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    display: flex;
+}
+
+.labelprimary {
+    width: 600px;
+    color: #000000;
+}
+
+input { 
+    background-color: #F2F2F2E5 !important;
+    border: 0 !important;
+}   
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;   
+}
+
+.FormLogLat {
+    display: flex;
+}
+
+.LogLat {
+    display: flex;
+    gap: 105px;
+    border: 0 none !important;
+}
+
+button {
+    width: 45%;
+    font-size: 30px;
+    font-weight: 600;
+}
