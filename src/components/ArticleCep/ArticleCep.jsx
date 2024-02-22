@@ -1,7 +1,18 @@
 import Table from 'react-bootstrap/Table';
 import "./index.scss";
+import { useEffect, useState } from 'react';
 
-const ArticleCep = () => {
+const ArticleCep = (props) => {
+    const [logradouro, setLogradouro] = useState("");
+    const [bairro, setBairro] = useState("");
+    const [localidade, setLocalidade] = useState("");
+
+    useEffect(() => {
+        setLogradouro(props.props.logradouro);
+        setBairro(props.props.bairro);
+        setLocalidade(props.props.localidade);
+    }, [props]);
+
     return (
         <div className='ArticleCep' id='endereco'>
             <h1>
@@ -19,9 +30,9 @@ const ArticleCep = () => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Justino Cobra</td>
-                            <td>Vila Ema</td>
-                            <td>SP</td>
+                            <td>{logradouro}</td>
+                            <td>{bairro}</td>
+                            <td>{localidade}</td>
                         </tr>
                     </tbody>
                 </Table>

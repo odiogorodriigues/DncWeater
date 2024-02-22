@@ -12,14 +12,20 @@ Este projeto é uma aplicação web desenvolvida utilizando Vite, React, JavaScr
 - **Bootstrap:** Um framework de design que simplifica o desenvolvimento de interfaces responsivas.
 - **Sass:** Um pré-processador CSS que adiciona funcionalidades extras e elegância ao código.
 
+## Funcionalidades
+
+1. *Consulta de Endereço (ViaCEP):* Utilizando a API ViaCEP, os usuários podem inserir um CEP e obter informações detalhadas sobre o endereço correspondente.
+
+2. *Condições Meteorológicas (OpenWeather):* A aplicação também exibe as condições meteorológicas atuais, utilizando a API OpenWeather.
+
 
 ## Instalação
 
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/odiogorodriigues/DncWeater.git
+cd DncWeater
 ```
 
 2. Instale as dependências:
