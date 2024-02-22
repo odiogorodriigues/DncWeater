@@ -44,6 +44,6 @@ npm run dev
 
 Acesse a aplicação no navegador em [http://localhost:3000](http://localhost:3000).
 
-## Contribuições
+## Acesso pelo Netlify
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) e enviar pull requests.
+Acesse o projeto: https://dncweater.netlify.app/
