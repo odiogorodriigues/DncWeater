@@ -5,14 +5,24 @@ import Form from "react-bootstrap/Form";
 import api from "../../APIs/ViaCep";
 import apiTempo from "../../APIs/OpenWeather";
 
-
-const Formulario = props => {
+const Formulario = (props) => {
     const [cep, setCep] = useState("");
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+
+        const monkey = await fetch(
+            "https://api.sheetmonkey.io/form/8GtVkZLqkFPacahqDX3YDf",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ nome, email, cep }),
+            }
+        );
     };
 
     async function Tempo() {
@@ -21,7 +31,7 @@ const Formulario = props => {
                 `weather?q=passos&units=metric&appid=f37acaf9a35e97c9a70af0954602ae95&lang=pt_br`
             );
             props.handleLocal(parseInt(response.data.main.temp));
-        }   catch (error) {
+        } catch (error) {
             console.log(error);
         }
     }
@@ -34,15 +44,15 @@ const Formulario = props => {
 
         try {
             const response = await api.get(`/${cep}/json`);
-            props.handleResult(response.data)
-            setNome("")
-            setCep("")
-            setEmail("")
+            props.handleResult(response.data);
+            setNome("");
+            setCep("");
+            setEmail("");
             Tempo();
         } catch (error) {
             console.log("ERRO" + error);
         }
-    } 
+    }
 
     return (
         <Form onSubmit={handleSubmit} className='formulario'>
@@ -77,7 +87,12 @@ const Formulario = props => {
                 />
             </Form.Group>
 
-            <Button className='mt-5' variant='primary' type='submit' onClick={localizarCep}>
+            <Button
+                className='mt-5'
+                variant='primary'
+                type='submit'
+                onClick={localizarCep}
+            >
                 Acessar
             </Button>
         </Form>
